@@ -12,48 +12,91 @@
     </style>
 </head>
 
+<body>
 <header>
-    <a href="https://posse-ap.com/">
+    <a class="posse-h" href="https://posse-ap.com/">
         <img src="assets/img/logo.svg" alt="posse"/>
     </a>
-<nav>
-    <h1 class="header">POSSEとは</h1>
-    <h1 class="header">イベント</h1>
-    <h1 class="header">日常生活</h1>
+    <nav>
+        <ul class="nav-list">
+            <li><a href="#">POSSEとは</a></li>
+            <li><a href="#">イベント</a></li>
+            <li><a href="#">日常生活</a></li>
+        </ul>
 
-<ul class="sns">
-    <a href=" "> </a>
-    <a href="https://twitter.com/posse_2024" class="btn">
-        <img src="./assets/img/icon-twitter.png" alt="Twitterアイコン" class="icon-twitter"/>
-    </a>
-    <a href="https://www.instagram.com/posse_programming/" class="btn">
-        <img src="./assets/img/icon-instagram.png" alt="Instagramアイコン" class="icon-instagram"/>
-    </a>
-</ul>
-</nav>
+        <ul class="sns">
+            <li>
+                <a href="https://twitter.com/posse_2024" class="btn" aria-label="POSSE Twitter">
+                    <img src="./assets/img/icon-twitter.png" alt="Twitterアイコン" class="icon-twitter"/>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/posse_programming/" class="btn" aria-label="POSSE Instagram">
+                    <img src="./assets/img/icon-instagram.png" alt="Instagramアイコン" class="icon-instagram"/>
+                </a>
+            </li>
+        </ul>
+    </nav>
 </header>
 
-<body></body>
+<main>  
+    <!-- メインビジュアル: imgタグを正しい属性で表示。CSSで固定・カバーされるようにします -->
+    <img class="mainvisual" src="assets/img/bg-mainvisual.jpg" alt="メインビジュアル"/>
+
+    <section>
+        <div>
+            <h1 class="catchcopy">学生プログラミングコミュニティ POSSE (ぽっせ)</h1>
+            <p class="catchcopy2">自分史上最高を仲間と。</p>
+        </div>
+        <div class="scroll">
+            <p>SCROLL DOWN</p>
+        </div>
+    </section>
+</main>
+<main>
+    <section>
+        <div>
+        <h1>POSSEとは</h1>
+        <2>About POSSE</2>
+        </div>
+
+        <div>
+        <img src=""
+        </div>
+    </section>
+
+
+
+</main>
 
 <footer>
-<ul>
-    <a href="https://posse-ap.com/" class=posse-footer>
-        <img src="assets/img/logo.svg" alt="posse"/>POSSE公式サイト
-    </a>
-</ul>
+    <div class="footer-inner">
+        <div class="footer-logo">
+            <a href="https://posse-ap.com/" class="posse-footer">
+                <img src="assets/img/logo.svg" alt="posse" />
+            </a>
+        </div>
 
-<a href=" "> </a>
-<ul>
+        <span class="footer-title">
+            POSSE公式サイト
+            <img src="assets/img/icon-external-link.svg" alt="外部リンクアイコン" />
+        </span>
 
-    <a href="https://twitter.com/posse_2024" class="btn-footer">
-        <img src="./assets/img/icon-twitter.png" alt="Twitterアイコン" class="icon-twitter"/>
-    </a>
-    <a href="https://www.instagram.com/posse_programming/" class="btn-footer">
-        <img src="./assets/img/icon-instagram.png" alt="Instagramアイコン" class="icon-instagram"/>
-    </a>
-</ul>
+        <ul class="footer-sns">
+            <li>
+                <a href="https://twitter.com/posse_2024" class="btn-footer" aria-label="POSSE Twitter">
+                    <img src="./assets/img/icon-twitter.png" alt="Twitterアイコン" class="icon-twitter" />
+                </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/posse_programming/" class="btn-footer" aria-label="POSSE Instagram">
+                    <img src="./assets/img/icon-instagram.png" alt="Instagramアイコン" class="icon-instagram" />
+                </a>
+            </li>
+        </ul>
 
-<small Copyright © POSSE All Rights Reserved.> &copy; 2024 POSSE</small>
+        <small class="footer-copy">&copy; 2024 POSSE</small>
+    </div>
 </footer>
-
+</body>
 </html>
