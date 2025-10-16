@@ -154,6 +154,8 @@ header nav{
     position: relative;
     background-color: #fff;
     padding: 80px 20px;
+    /* mainvisual (fixed full-viewport) の下に表示させるためのオフセット */
+    margin-top: 100vh;
     box-sizing: border-box;
 }
 
@@ -174,7 +176,8 @@ header nav{
 @media (max-width: 768px){
     .about-inner{ flex-direction: column; text-align: left; }
     .about-img img{ width: 100%; max-width: 420px; }
-    .about{ padding: 40px 16px; }
+    /* モバイルでは mainvisual の高さを小さく扱うためオフセットを下げる */
+    .about{ padding: 40px 16px; margin-top: 60vh; }
 }
 
     .catchcopy{ font-family: noto-sans-jp, sans-serif;
@@ -221,9 +224,6 @@ header nav{
       color:white
     }
 
-.about{
-
-}
 
 
 
