@@ -3,17 +3,47 @@
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ph1 POSSE課題</title>
     <link rel="stylesheet" href="./assets/css/reset.css" />
     <link rel="stylesheet" href="./assets/css/style.css"/>
-    <style>
+    <link rel="stylesheet" href="./assets/css/sp/style.css"/>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 
-    <!-- duplicate about block removed -->
+<body>
+<header>
+    <a class="posse-h" href="https://posse-ap.com/">
+        <img  class=posse-h src="assets/img/logo.svg" alt="posse"/>
+    </a>
+
+    <button class="hamburger" aria-label="メニュー">
+        <span class="b1"></span>
+
+        <span class="b2"></span>
+
+        <span class="b3"></span>
+    </button>
+
+    <nav class="nav">
+        <ul class="nav-list">
+            <li><a href="#">POSSEとは</a></li>
+            <li><a href="#">イベント</a></li>
+            <li><a href="#">日常生活</a></li>
+        </ul>
+
+        <ul class="sns">
+            <li>
+                <a href="https://twitter.com/posse_2024" class="btn" aria-label="POSSE Twitter">
+                    <img src="./assets/img/icon-twitter.png" alt="Twitterアイコン" class="icon-twitter"/>
+                </a>
             </li>
             <li>
                 <a href="https://www.instagram.com/posse_programming/" class="btn" aria-label="POSSE Instagram">
@@ -24,36 +54,133 @@
     </nav>
 </header>
 
-<main>  
+<main>   
     <!-- メインビジュアル: imgタグを正しい属性で表示。CSSで固定・カバーされるようにします -->
-    <img class="mainvisual" src="assets/img/bg-mainvisual.jpg" alt="メインビジュアル"/>
-
-    <section>
-        <div>
-            <h1 class="catchcopy">学生プログラミングコミュニティ POSSE (ぽっせ)</h1>
-            <p class="catchcopy2">自分史上最高を仲間と。</p>
-        </div>
-        <div class="scroll">
-            <p>SCROLL DOWN</p>
-        </div>
-    </section>
-</main>
-
-<main class ="about">
-    <section>
-        <div>
-        <h1>POSSEとは</h1>
-        <2>About POSSE</2>
-        </div>
-
-        <div>
-        <img src="assets/img/img-about.jpg">
-        <p>説明文：学生プログラミングコミュニティ「POSSE(ポッセ)」は、人格とプログラミング、二つの面での成長をスローガンに活動しており、大学生だけが集まって学びを深めるコミュニティです。プログラミングだけではありません。オフラインでのイベントや、旅行など様々な企画を行っています!それらを通じて、夏休みの大半をPOSSEで出来た仲間と過ごす人もたくさんいるほどメンバーとの仲が深まります。</p>
-        </div>
-
+    <section class="mainvisual-wrapper">
+        <h1 class="catchcopy">学生プログラミングコミュニティ POSSE (ポッセ)</h1>
+        <p class="catchcopy2">自分史上最高を仲間と。</p>
     </section>
 
+    <div class="scroll">
+        <p style="font-family: 'Plus Jakarta Sans', sans-serif;">・SCROLL DOWN</p>
+    </div>
+
+    <section class="about">
+        <div class="about-title">
+            <h1>POSSEとは</h1>
+            <h2 style="color: aqua; font-size:7px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 24px;">About POSSE</h2>
+        </div>
+
+        <div class="about-content">
+            <img  class="img-about" src="assets/img/img-about.jpg">
+            <p>学生プログラミングコミュニティ「POSSE(ポッセ)」は、人格とプログラミング、二つの面での成長をスローガンに活動しており、大学生だけが集まって学びを深めるコミュニティです。<br>プログラミングだけではありません。オフラインでのイベントや、旅行など様々な企画を行っています!それらを通じて、夏休みの大半をPOSSEで出来た仲間と過ごす人もたくさんいるほどメンバーとの仲が深まります。</p>
+        </div>
+    </section>
+
+    <section class="event">
+        <div class="event-title">
+            <h1>イベント</h1>
+            <h2 style="color:aqua; font-size:7px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 24px;">Event</h2>
+            <h3 class="event-text">POSSE では、年内に数多くのイベントを行っています。<br>こちらに掲示してあるのはイベントの一部です。<br>プログラミングだけでなく、これらのイベントを共に経験し、仲間との友情はより深まります。</h3>
+        </div>
+        <div class="event-content">
+            <li>
+                <img class="img-event" src="assets/img/img-event01.jpg">
+                <p style="background-color: aqua;">May</p>
+                <p>入学式</p>
+            </li>
+            <li>
+                <img class="img-event" src="assets/img/img-event02.jpg">
+                <p style="background-color: aqua;">June</p>
+                <p>ハッカソン</p>
+            </li>
+            <li>
+                <img class="img-event" src="assets/img/img-event03.jpg">
+                <p style="background-color: aqua;">May</p>
+                <p>課題サポート会</p>
+            </li>
+            <li>
+                <img class="img-event" src="assets/img/img-event04.jpg">
+                <p style="background-color: aqua;">March-April</p>
+                <p>チーム開発</p>
+            </li>
+        </div>
+    </section>
+
+    <section class="dailyrecord">
+        <div class="daily-title">
+            <h1>日常生活</h1>
+            <h2 style="color: aqua; font-size: 24px; font-family: 'Plus Jakarta Sans', sans-serif;">Daily Record</h2>
+            <h3 class="daily-text">様々な日々の活動について紹介します。<br>POSSE では、プログラミングを学んでいくにあたってメンバー同士が共に学習するような時間を数多く設けています。<br>入会時期が半年毎にあるため、縦の繋がりから学べることは非常に多く、この繋がりを意識した班を構成したり、<br>それとは別に同期のみの班を構成して共に学習するようなシステムを採用しています。</h3>
+        </div>
+
+        <div class="daily-content">
+        <li style="list-style-image: url(assets/img/icon-check.svg);" class="meetup">
+            <div>
+                <img  class="img-meetup" src="assets/img/img-daily01.jpg">   
+            </div>
+            <div>
+                <h1>01 ミートアップ</h1>
+                <ul>
+                    <li>毎週月曜日 19:30 ～ 22:30</li>
+                    <li>全員参加</li>
+                </ul>
+                <div>
+                    <p style="font-size: 14px;">全体ミーティングです。<br>各局からのお知らせや、講演会など目白押しです。</p>
+                </div>
+            </div>
+        </li>
+        <li style="list-style-image: url(assets/img/icon-check.svg);" class="tate">
+            <div>
+                <img class="img-tate" src="assets/img/img-daily02.jpg">
+            </div>
+            <div>
+                <h1>02 縦もく</h1>
+                <ul>
+                    <li>週 1 回 2 時間</li>
+                </ul>
+                <div>
+                    <p style="font-size: 14px;">zoom を繋ぎ、わからないところを先輩に質問できます。<br>わかるまで丁寧に教えてくれます。</p>
+                </div>
+            </div>
+        </li>
+        <li style="list-style-image: url(assets/img/icon-check.svg);" class="yoko">
+            <div>
+                <img class="img-yoko" src="assets/img/img-daily03.jpg">
+            </div>
+            <div>
+                <h1>03 横もく</h1>
+                <ul>
+                    <li>週 1 回 3 時間</li>
+                </ul>
+                <div>
+                    <p style="font-size: 14px;">同期と 3 ～ 4 人一組で学習しながら、わからないところを共有、質問できます。<br>オフラインで集合したり、共にハッカソンに挑んだりします。</p>
+                </div>
+            </div>
+        </li>
+        </div>
+    </section>
+
 </main>
+
+    <section class="line">
+    <div class="line-inner">
+        <h2 class="line-title">
+            <a href="https://line.me/R/ti/p/@651htnqp?from=page"><img class="icon-line" src="assets/img/icon-line.svg" alt="LINEアイコン"/></a><p>POSSE公式LINE</p>
+        </h2>
+
+        <div class="line-content">
+            <p>公式LINEにてご質問を随時受け付けております。<br>詳細や POSSE 最新情報につきましては、公式LINEにてお知らせ致しますので<br>下記ボタンより友達追加をお願いします!</p>
+        </div>
+
+        <div>
+            <a class="line-btn" href="https://line.me/R/ti/p/@651htnqp?from=page">LINE追加</a>
+        </div>
+    </div>
+    </section>
+
+
+
 
 <footer>
     <div class="footer-inner">
@@ -64,8 +191,10 @@
         </div>
 
         <span class="footer-title">
-            POSSE公式サイト
-            <img src="assets/img/icon-external-link.svg" alt="外部リンクアイコン" />
+            
+            <a href="https://posse-ap.com/" target="_blank" rel="noopener noreferrer">POSSE公式サイト
+                <img src="assets/img/icon-external-link.svg" alt="外部リンクアイコン" />
+            </a>
         </span>
 
         <ul class="footer-sns">
@@ -81,7 +210,7 @@
             </li>
         </ul>
 
-        <small class="footer-copy">&copy; 2024 POSSE</small>
+        <small class="footer-copy" style="font-family:'Plus Jakarta Sans', sans-serif;">&copy; 2024 POSSE</small>
     </div>
 </footer>
 </body>

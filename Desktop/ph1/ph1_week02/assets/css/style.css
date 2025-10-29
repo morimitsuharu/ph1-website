@@ -1,3 +1,14 @@
+.line h2 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+/* メインビジュアルラッパー */
+.mainvisual-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
 /**
 * File Name : style.css
 * Version : 1.0
@@ -39,68 +50,80 @@
  * 1.2 - ベーススタイル
  */
 body {
-  color: #333333;
+    color: #333333;
 }
 
-/* スムーズスクロール（ページ内リンクの滑らかなスクロール） */
-html { scroll-behavior: smooth; }
+/* Reset default margins and use border-box to avoid unexpected overflow */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* 隙間が残る場合の安全策（必要な場合のみ） */
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
 
 
 /**
  * 1.3 - 汎用スタイル
  */
 
-
- */
-
-/**
- * 2.7 - 公式LINE
- */
-
-/* 3.0 - Animation, JavaScript Object */
+/* 2.0 - Sections */
 /* ============================================ */
 
 /**
- * 3.1 - フェードイン
+ * 2.1 - ヘッダー
  */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px 0 8px;
+    height: 64px;
+    box-sizing: border-box;
+    z-index: 1000;
+    background: transparent;
+}
+header nav {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: 16px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font: normal;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    font-size: 14px;
+    color: #0071bc;
+}
+.posse-h {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.posse-h img {
+    height: 40px;
+    width: auto;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+/* --- ここまで --- */
 
-/**
- * 3.2 - スライダー
- */
 
-.header{
-        display: flex; /*　横並びにする */
-        justify-content: flex-start;
-        align-items: center;
-        gap: 16px;
-        font-family: 'Noto Sans JP', sans-serif;
-        font:normal;
-        margin-right: 0;
-        font-weight: 700;
-        line-height: 1.2;
-        letter-spacing: 0.1em;
-        font-size: 14px;
-        color:black;
-    }
-
-/* header を基準にして nav を右上に絶対配置 */
-header { position: relative; }
-header nav{
-        position: absolute;
-        top: 2%;
-        right: 2%;
-        display: flex; /* nav内を横並びにする (メニュー + SNS) */
-        align-items: center;
-        gap: 16px;
-        font-family: 'Noto Sans JP', sans-serif;
-        font:normal;
-        font-weight: 700;
-        letter-spacing: 0.1em;
-        font-size: 14px;
-        color:black;
-    }
-    /* ヘッダーを前面に出す */
-    header{ z-index: 1000; }
+/* section のデフォルト余白を消して mainvisual をヘッダー直下に */
+section{
+    margin: 0;
+    padding: 0;
+}
 
     /* nav 内のリストを整形 */
     .nav-list{
@@ -137,106 +160,61 @@ header nav{
     /* ヘッダー内のメニューと SNS アイコンの間隔を広げる */
     header nav .sns{ margin-left: 24px; }
 
-    /* メインビジュアルを header/footer の背面に配置するためのユーティリティ */
-    .mainvisual{
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        object-fit: cover;
-        z-index: -1; /* header/footer より背面 */
-        display: block;
-    }
 
-/* 2.4 - About セクション */
-.about{
-    position: relative;
-    background-color: #fff;
-    padding: 80px 20px;
-    /* mainvisual (fixed full-viewport) の下に表示させるためのオフセット */
-    margin-top: 100vh;
-    box-sizing: border-box;
+    header {
+    height: 64px;
 }
-
-.about-inner{
-    max-width: 1100px;
-    margin: 0 auto;
+header nav {
     display: flex;
-    gap: 24px;
     align-items: center;
+    height: 100%;
+}
+.posse-h {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    top: auto;
+    transform: none;
+}
+.posse-h img {
+    height: 40px;
+    width: auto;
+    display: block;
+    margin: 0;
+    padding: 0;
 }
 
-.about-text{ flex: 1; }
-.about-title{ font-size: 28px; color: #0071bc; margin: 0 0 12px 0; }
-.about-lead{ font-size: 18px; margin: 0 0 16px 0; color: #333; }
-.about-img img{ width: 320px; height: auto; border-radius: 6px; display: block; }
 
-/* モバイル対応 */
-@media (max-width: 768px){
-    .about-inner{ flex-direction: column; text-align: left; }
-    .about-img img{ width: 100%; max-width: 420px; }
-    /* モバイルでは mainvisual の高さを小さく扱うためオフセットを下げる */
-    .about{ padding: 40px 16px; margin-top: 60vh; }
+    .header {
+height: 64px;
 }
-
-    .catchcopy{ font-family: noto-sans-jp, sans-serif;
-        width:593px;
-        height: 43px;
-        font-weight: 700
-        bold;
-        letter-spacing: 5%;
-        font-size: 24px;
-        color: #0071bc;
-        position: absolute;
-        top: 83%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-        background-color: white;
-        padding-left: 20px;
-        padding-right: 4px;
-    }
-    
-    .catchcopy2{ font-family: noto-sans-jp, sans-serif;
-        font-weight: 500
-        bold;
-        letter-spacing: 0.1em;
-        font-size: 50px;
-        color: black;
-        position: absolute;
-        top:90%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-        background-color: white;
-        padding-left: 20px;
-
-    }
-
-    .scroll{
-      font: size 40px;
-      font-family: noto-sans-jp, sans-serif;
-      top: 715px;
-      left:1283px;
-      letter-spacing: 4px;
-      position:absolute;;
-      color:white
-    }
-
-
-
-
-
-
-
-
-
-    /* ヘルパークラス: posse 要素を垂直中央に揃える */
-    .posse-h{top: 50%; transform: translateY(-50%);} 
-
-    /* コピーライトのスタイル（ルート版から取り込み） */
-    .copyright{
+.header nav {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.posse-h {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    top: auto;
+    transform: none;
+}
+.posse-h img {
+height: 40px;
+width: auto;
+display: block;
+margin: 0;
+padding: 0;
+}
+/**
+ * 2.2 - フッター
+ */
+.copyright{
         font-family: 'Noto Sans JP', sans-serif;
         font-weight: 700;
         letter-spacing: 0.1em;
@@ -256,21 +234,18 @@ header nav{
             margin-left: 16px;
         }
 
-        footer{
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            display: flex;
-            width: auto;
-            padding: 12px 16px;
+        .footer{
+            width: 100%;
+            text-align: center;
+            display: block;
+            padding: 24px 0 12px 0;
             box-sizing: border-box;
-            z-index: 1000;
         }
 
         .footer-inner{
             display: flex;
             flex-direction: column; /* ロゴ -> SNS -> コピーライト */
-            align-items: flex-start;
+            align-items: center;
         }
 
         /* moved footer-title (POSSE公式サイト) - ロゴとSNSの間に表示 */
@@ -316,8 +291,376 @@ header nav{
 .btn-footer{
   display: flex; /*　横並びにする */
   justify-content: center ;/* 中央寄せにする */
-  text-align: center;
-  align-items: center;
+text-align: center;
+align-items: center;
         }
 
         small{ text-align: center;}
+
+        /* --- ヘッダー内ロゴとnavの高さ・中央揃え統一 --- */
+/**
+ * 2.3 - メインビジュアル
+ */
+.mainvisual-wrapper{
+    /* ヒーローとしてページの先頭に置き、スクロールで上へ消えるようにする */
+    position: relative; /* fixed から変更 */
+    top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh; /* ビューポートいっぱいの高さ */
+        object-fit: cover;
+        display: block;
+        margin-top: 0; /* ヘッダーとの隙間をなくす */
+        /* ヘッダーが fixed の場合、見た目でヘッダー分が重なるため特に余白調整不要 */
+        background-image: url("../img/bg-mainvisual.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+        .catchcopy{ font-family: noto-sans-jp, sans-serif;
+            width:593px;
+            height: 43px;
+            font-weight: 700;
+            letter-spacing: 5%;
+            font-size: 24px;
+            color: #0071bc;
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            background-color: white;
+            padding-left: 20px;
+            z-index: 100;
+            white-space: nowrap;
+        }
+    
+    .catchcopy2{ font-family: noto-sans-jp, sans-serif;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        font-size: 50px;
+        color: black;
+        position: absolute;
+        top:82%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        background-color: white;
+        padding-left: 20px;
+        z-index: 100;
+    }
+
+    .scroll{
+    font-size: 14px;
+    font-family: plus jakarta sans, sans-serif;
+    letter-spacing: 4px;
+    position: absolute; 
+    margin: 0 auto; /* 横中央に配置 */
+    text-align: center;
+    color: white;
+    z-index: 100;
+    top:95%;
+    left: 87%;
+    }
+/**
+ * 2.4 - POSSEとは
+ */
+.about{
+        /* 正常な文書の流れで mainvisual の下に表示されるようにする */
+        position: relative;
+        z-index: auto;
+        margin-top: auto; /* 1つ目のsectionとの間に余白を追加 */
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+        gap: 40px;
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 60px 20px;
+    }
+
+    .about-title{
+        font-family: 'Noto Sans JP', sans-serif;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        font-size: 24px;
+        color: black;
+        text-align: center;
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .img-about {
+        width: 470px;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 20px;
+        display: block;
+        justify-self: start;
+    }
+
+    .about-content{
+        display: grid;
+        grid-template-columns: 470px 1fr;
+        grid-template-rows: 1fr;
+        align-items: center;
+        font-family: 'Noto Sans JP', sans-serif;
+        font-size: 14px;
+        color: #333333;
+        line-height: 1.6;
+        font-weight: 400;
+        gap: 32px;
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .about-content p {
+        grid-column: 2;
+        grid-row: 1;
+    }
+/**
+ * 2.5 - イベント
+ */
+.event{
+        position: relative;
+        z-index: auto;
+        margin-top: 100px; /* 1つ目のsectionとの間に余白を追加 */
+        text-align: center;
+    }
+
+    .event-title{
+        font-family: 'Noto Sans JP', sans-serif;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        font-size: 24px;
+        color: black;
+        text-align: center;  
+        margin-top: 100px; 
+        font-weight: 400;   
+    }
+    .event-text{
+        font-family: 'Noto Sans JP', sans-serif;
+        font-size: 14px;
+        color: #333333;
+        line-height: 1.7;
+        margin-top: 10px;
+        padding: 0 20px;
+        letter-spacing: -0.1em;
+    }
+    .event-content{
+        font-family: noto-sans-jp, sans-serif;
+        display: flex;
+        justify-content: center;
+        gap: 32px;
+        margin-top: 20px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        padding-bottom: 20px;
+        letter-spacing: 8px;
+        font-weight: 400;
+    }
+    .img-event{
+        width: 320px;
+        height: 230px;
+        border-radius: 20px;
+    }
+/**
+ * 2.6 - 日常生活
+ */
+.dailyrecord{
+        font-family: noto-sans-jp, sans-serif;
+        font-weight: 700;
+        font-size: 24px;
+        position: relative;
+        z-index: auto;
+        margin-top: 100px; /* 1つ目のsectionとの間に余白を追加 */
+        text-align: center;
+    }
+
+    .daily-title{
+        font-family: 'Noto Sans JP', sans-serif;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        font-size: 24px;
+        color: black;
+        text-align: center;
+        margin-bottom: 130px;
+    }
+
+    .daily-text{
+        font-family: 'Noto Sans JP', sans-serif;
+        font-size: 14px;
+        color: #333333;
+        line-height: 1.7;
+        margin-top: 10px;
+        padding: 0 20px;
+        letter-spacing: -0.1em;
+    }
+
+    .img-meetup{
+        width: 480px;
+        height: 320px;
+        border-radius: 20px;
+        margin-left: 0px;
+        position: relative;
+    }
+    .meetup{
+        flex-direction: row-reverse;
+        background-color: #F7F9FB;
+        background-size: 940px 324px;
+        display: flex;
+        justify-content: center;
+        gap: 32px;
+        margin-top: 120px;
+        padding-bottom: 20px;
+        overflow: visible;
+    }
+
+    .img-tate{
+        width: 480px;
+        height: 320px;
+        border-radius: 20px;
+    }
+
+    .tate{
+        background-color: #F7F9FB;
+        background-size:940px 324px ;
+        display: flex;
+        justify-content: center;
+        gap: 32px;
+        margin-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .img-yoko{
+        width: 480px;
+        height: 320px;
+        border-radius: 20px;
+    }
+    .yoko{
+        flex-direction: row-reverse;
+        background-color: #F7F9FB;
+        background-size:940px 324px ;
+        display: flex;
+        justify-content: center;
+        gap: 32px;
+        margin-top: 20px;
+        padding-bottom: 20px;
+    }
+    .meetup, .tate, .yoko {
+    max-width: 940px;
+    max-height: 324px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    /* overflow: visible; デフォルト */
+}
+.img-meetup, .img-tate, .img-yoko {
+    max-width: 100%;
+    max-height: 100%;
+    box-sizing: border-box;
+}
+
+.meetup, .tate {
+margin-bottom: 30px;
+}
+.yoko {
+margin-bottom: 0;
+}
+
+/**
+ * 2.7 - 公式LINE
+ */
+.line{
+    font-family: noto-sans-jp, sans-serif;
+    color:white;
+    margin-top: 100px;/* 1つ目のsectionとの間に余白を追加 */
+    margin-bottom: 50px;
+    text-align: center;
+    align-items: center;
+    width: 1440px;
+    height: 335px;
+    background-image:url("../img/bg-cta.jpg");
+    }
+
+    .icon-line{
+
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    margin: 0;
+    }
+
+    .line-title{
+        align-items: center;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        top: 3726px;
+    }
+
+.line-content{
+    margin-top: auto;
+    margin-bottom: 10px;
+}
+
+
+
+        .line-inner {
+            padding-top: 40px;
+            padding-bottom: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            box-sizing: border-box;
+        }
+
+        .line-btn{
+            display: inline-block;
+            width: 450px;
+            height: 55px;
+            color: #0071bc;
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: white;
+            padding: 16px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            text-align: center;
+            line-height: 23px;
+            transition: background-color 0.3s;
+            z-index: 101;
+            box-sizing: border-box;
+        }
+
+        .line-btn:hover{
+            background-color: #0071bc;
+            color: white;
+        }
+
+        .line-btn:active{
+            background-color: #005fa3;
+            color: white;
+        }
+
+/* 3.0 - Animation, JavaScript Object */
+/* ============================================ */
+
+/**
+ * 3.1 - フェードイン
+ */
+
+/**
+ * 3.2 - スライダー
+ */
+
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+    
+
